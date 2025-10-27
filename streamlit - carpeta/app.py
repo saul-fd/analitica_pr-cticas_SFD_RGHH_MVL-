@@ -9,14 +9,9 @@ st.set_page_config(
 )
 
 #  Carga de Datos (con cache para mejorar rendimiento) 
+df = pd.read_csv('nba.csv')
+df['date_game'] = pd.to_datetime(df['date_game'])
 
-def load_data():
-    df = pd.read_csv('nba.csv')
-    df['date_game'] = pd.to_datetime(df['date_game'])
-
-    return df
-
-df = load_data()
 
 #  Barra Lateral 
 st.sidebar.header("Filtros del Dashboard")
@@ -116,6 +111,7 @@ else:
         color_discrete_map={'Victorias': 'green', 'Derrotas': 'red'}
     )
     st.plotly_chart(fig_pie, use_container_width=True)
+
 
 
 
