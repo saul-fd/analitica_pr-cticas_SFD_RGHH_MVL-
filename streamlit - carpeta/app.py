@@ -28,7 +28,7 @@ selected_team = st.sidebar.selectbox("Seleccionar Equipo", teams_in_year)
 game_type = st.sidebar.pills(
     "Tipo de Juego",
     ["Temporada Regular", "Playoffs", "Ambos"],
-    index=2  # "Ambos" seleccionado por defecto
+    default="Ambos"  
 )
 
 #  Logica de Filtrado de Datos 
@@ -111,6 +111,7 @@ else:
         color_discrete_map={'Victorias': 'green', 'Derrotas': 'red'}
     )
     st.plotly_chart(fig_pie, use_container_width=True)
+
 
 
 
