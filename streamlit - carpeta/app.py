@@ -25,7 +25,7 @@ teams_in_year = sorted(df[df['year_id'] == selected_year]['fran_id'].unique())
 selected_team = st.sidebar.selectbox("Seleccionar Equipo", teams_in_year)
 
 # 3. Selector de Tipo de Juego 
-game_type = st.sidebar.radio(
+game_type = st.sidebar.pills(
     "Tipo de Juego",
     ["Temporada Regular", "Playoffs", "Ambos"],
     index=2  # "Ambos" seleccionado por defecto
@@ -111,6 +111,7 @@ else:
         color_discrete_map={'Victorias': 'green', 'Derrotas': 'red'}
     )
     st.plotly_chart(fig_pie, use_container_width=True)
+
 
 
 
