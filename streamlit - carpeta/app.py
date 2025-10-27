@@ -11,7 +11,7 @@ st.set_page_config(
 #  Carga de Datos (con cache para mejorar rendimiento) 
 
 def load_data():
-    df = pd.read_csv('nba.csv')
+    df = pd.read_csv('nba_all_elo.csv')
     df['date_game'] = pd.to_datetime(df['date_game'])
 
     return df
@@ -116,4 +116,5 @@ else:
         color_discrete_map={'Victorias': 'green', 'Derrotas': 'red'}
     )
     st.plotly_chart(fig_pie, use_container_width=True)
+
 
